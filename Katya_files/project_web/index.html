@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Sign Language Learning Platform</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #eaf8e6;
+        }
+
+        /* Canvas Background */
+        #canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        /* Header */
+        header {
+            background-color: #2e7d32;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #66bb6a;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 15px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: 2px solid white;
+            border-radius: 8px;
+            background-color: #388e3c;
+        }
+
+        nav a:hover {
+            background-color: #1b5e20;
+        }
+
+        /* Main Content */
+        main {
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #2e7d32;
+            margin-bottom: 20px;
+        }
+
+        .video-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .video-card {
+            width: 300px;
+            text-align: center;
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-card video {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        /* Modals */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 20px;
+            box-sizing: border-box;
+            border-radius: 10px;
+            max-width: 500px;
+            margin: 0 auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+        .modal-content input,
+        .modal-content select,
+        .modal-content button {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .form-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .form-tabs button {
+            padding: 10px;
+            border: none;
+            background-color: #81c784;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .form-tabs button.active {
+            background-color: #66bb6a;
+        }
+
+        .form-container form {
+            display: none;
+        }
+
+        .form-container form.active {
+            display: block;
+        }
+
+        .form-container input, .form-container select {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            color: white;
+            background-color: #388e3c;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color: #2e7d32;
+        }
+
+        /* Team Section */
+        #team {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .team-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .team-member {
+            text-align: center;
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 200px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .team-member img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        /* Recognition Section */
+        #recognition p {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+        }
+
+        #recognition button {
+            display: block;
+            margin: 0 auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #388e3c;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #recognition button:hover {
+            background-color: #2e7d32;
+        }
+
+
+        /* Footer */
+        footer {
+            background-color: #66bb6a;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+        }
+
+        footer .social-icons a {
+            margin: 0 10px;
+            color: white;
+            text-decoration: none;
+            font-size: 1.5em;
+        }
+
+        footer .social-icons a:hover {
+            color: #a5d6a7;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .team-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- WebGL Canvas for Background Animation -->
+    <canvas id="canvas"></canvas>
+
+    <!-- Header -->
+    <header>
+        <h1>Sign Language Learning Platform</h1>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <a href="#bengali">Bengali</a>
+        <a href="#russian">Russian</a>
+        <a href="#american">American</a>
+        <a href="#auth" id="auth-btn">Register / Login</a>
+    </nav>
+
+ <!-- Main Content -->
+    <main>
+        <!-- Bengali Section -->
+        <div id="bengali" class="section">
+            <h2>Bengali Sign Language</h2>
+            <div class="video-grid">
+                <div class="video-card">
+                    <video controls>
+                        <source src="video/bengali/hello.mp4" type="video/mp4">
+                    </video>
+                    <p>Hello</p>
+                </div>
+                <div class="video-card">
+                    <video controls>
+                        <source src="video/bengali/thank_you.mp4" type="video/mp4">
+                    </video>
+                    <p>Thank You</p>
+                </div>
+                <div class="video-card">
+                    <video controls>
+                        <source src="video/bengali/good_morning.mp4" type="video/mp4">
+                    </video>
+                    <p>Good Morning</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Russian Section -->
+        <div id="russian" class="section">
+            <h2>Russian Sign Language</h2>
+            <div class="video-grid">
+                <div class="video-card">
+                    <video controls>
+                        <source src="video/russian/hello.mp4" type="video/mp4">
+                    </video>
+                    <p>Hello</p>
+                </div>
+                <div class="video-card">
+                    <video controls>
+                        <source src="video/russian/thank_you.mp4" type="video/mp4">
+                    </video>
+                    <p>Thank You</p>
+                </div>
+                <div class="video-card">
+                    <video controls>
+                        <source src="video/russian/good_morning.mp4" type="video/mp4">
+                    </video>
+                    <p>Good Morning</p>
+                </div>
+            </div>
+        </div>
+        <!-- American Section -->
+        <div id="american" class="section">
+            <h2>American Sign Language</h2>
+            <div class="video-grid">
+                <div class="video-card">
+                    <video controls>
+                        <source src="video/bengali/hello.mp4" type="video/mp4">
+                    </video>
+                    <p>Hello</p>
+                </div>
+                <div class="video-card">
+                    <video controls>
+                        <source src="video/bengali/thank_you.mp4" type="video/mp4">
+                    </video>
+                    <p>Thank You</p>
+                </div>
+                <div class="video-card">
+                    <video controls>
+                        <source src="video/bengali/good_morning.mp4" type="video/mp4">
+                    </video>
+                    <p>Good Morning</p>
+                </div>
+            </div>
+        </div>
+		</br>
+
+        <!-- Forms -->
+        <!-- Modal for Register / Login -->
+        <div id="authModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <div class="form-tabs">
+                    <button class="tab-btn active" data-target="register">Register</button>
+                    <button class="tab-btn" data-target="login">Login</button>
+                </div>
+                <div class="form-container">
+                    <!-- Registration Form -->
+                    <form id="register" class="active" method="POST" action="https://httpbin.org/post" method="post">
+                        <input type="text" name="firstName" placeholder="First Name" required>
+                        <input type="text" name="lastName" placeholder="Last Name" required>
+                        <input type="email" name="email" placeholder="Email" required>
+                        <input type="number" name="age" placeholder="Age" required>
+                        <select name="education" required>
+                            <option value="">Select Education Qualification</option>
+                            <option value="High School">High School</option>
+                            <option value="Bachelor's">Bachelor's</option>
+                            <option value="Master's">Master's</option>
+                        </select>
+                        <input type="password" name="password" placeholder="Password" required>
+                        <input type="password" name="repeatPassword" placeholder="Repeat Password" required>
+                        <button type="submit">Register</button>
+                    </form>
+
+                    <!-- Login Form -->
+                    <form id="login" method="POST" action="https://httpbin.org/post" method="post">
+                        <input type="email" name="email" placeholder="Email" required>
+                        <input type="password" name="password" placeholder="Password" required>
+                        <button type="submit">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Section -->
+        <div id="team" class="section">
+            <h2>Meet Our Team</h2>
+            <div class="team-container">
+                <div class="team-member">
+                    <img src="basic_web_development/team/photo_test.png" alt="Team Leader"> <!-- leader.jpg -->
+                    <h3>Ashrafi Arifa</h3>
+                    <p>Team Leader</p>
+                </div>
+                <div class="team-member">
+                    <img src="basic_web_development/team/photo_test.png" alt="Team Member 1"> <!-- leader.jpg -->
+                    <h3>John Doe</h3>
+                    <p>Backend Developer</p>
+                </div>
+                <div class="team-member">
+                    <img src="basic_web_development/team/photo_test.png" alt="Team Member 2"> <!-- member2.jpg -->
+                    <h3>Jane Smith</h3>
+                    <p>AI Specialist</p>
+                </div>
+                <div class="team-member">
+                    <img src="basic_web_development/team/photo_test.png" alt="Team Member 3"> <!-- member3.jpg -->
+                    <h3>Mark Lee</h3>
+                    <p>Frontend Developer</p>
+                </div>
+                <div class="team-member">
+                    <img src="basic_web_development/team/photo_test.png" alt="Team Member 4"> <!-- member4.jpg -->
+                    <h3>Sarah Connor</h3>
+                    <p>UI/UX Designer</p>
+                </div>
+            </div>
+        </div>
+			<!-- Sign Language Recognition Section -->
+        <div id="recognition" class="section">
+            <h2>Sign Language Recognition</h2>
+            <p>
+                Our platform uses AI-powered technology to recognize and interpret sign language gestures in real-time.
+            </p>
+            <p>
+                This feature bridges the communication gap and promotes inclusivity.
+            </p>
+            <button onclick="startRecognition()">Start Recognition</button>
+        </div>
+
+		</br>
+    </main>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Accessible Sign Language Platform</p>
+        <div class="social-icons">
+            <a href="https://facebook.com" target="_blank">Facebook</a>
+            <a href="https://twitter.com" target="_blank">Twitter</a>
+            <a href="https://instagram.com" target="_blank">Instagram</a>
+        </div>
+    </footer>
+</body>
+</html>
+    <!-- WebGL Background Animation Script -->
+<script>
+    // Open modal
+    document.getElementById("auth-btn").addEventListener("click", () => {
+        document.getElementById("authModal").style.display = "flex";
+    });
+
+    // Close modal
+    document.querySelector(".close-btn").addEventListener("click", () => {
+        document.getElementById("authModal").style.display = "none";
+    });
+
+    // Tab switching
+    document.querySelectorAll(".tab-btn").forEach(button => {
+        button.addEventListener("click", () => {
+            document.querySelector(".tab-btn.active").classList.remove("active");
+            button.classList.add("active");
+            document.querySelector(".form-container form.active").classList.remove("active");
+            document.getElementById(button.dataset.target).classList.add("active");
+        });
+    });
+</script>
+</body>
+</html>
+    <script>
+        const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        /* const shapes = [];*/
+        const shapes = Array.from({ length: 50 }, () => ({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            size: Math.random() * 20 + 5,
+            color: `hsl(${Math.random() * 40 + 100}, ${Math.random() * 50 + 50}%, ${Math.random() * 30 + 60}%)`,
+            dx: Math.random() * 2 - 1,
+            dy: Math.random() * 2 - 1,
+        }));
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            shapes.forEach((shape) => {
+                ctx.beginPath();
+                ctx.arc(shape.x, shape.y, shape.size, 0, Math.PI * 2);
+                ctx.fillStyle = shape.color;
+                ctx.fill();
+                shape.x += shape.dx;
+                shape.y += shape.dy;
+                if (shape.x < 0 || shape.x > canvas.width) shape.dx *= -1;
+                if (shape.y < 0 || shape.y > canvas.height) shape.dy *= -1;
+            });
+            requestAnimationFrame(animate);
+        }
+        animate();
+
+
+        // Tab Switcher
+        document.querySelectorAll(".tab-btn").forEach(button => {
+            button.addEventListener("click", () => {
+                document.querySelector(".tab-btn.active").classList.remove("active");
+                button.classList.add("active");
+                document.querySelector(".form-container form.active").classList.remove("active");
+                document.getElementById(button.dataset.target).classList.add("active");
+            });
+        });
+    </script>
+</body>
+</html>
