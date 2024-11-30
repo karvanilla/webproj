@@ -1,0 +1,182 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  background-color: #eaf8e6;
+  padding-top: 35px;
+}
+
+/* Canvas Background */
+#canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* Header */
+header {
+  background: #2e7d32;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white !important;
+  position: relative;
+  z-index: 0;
+}
+
+.btn-link,
+.btn-outline-secondary,
+.btn-outline-primary {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 20px;
+}
+
+/* Main Content */
+h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 20px;
+  color: #2e7d32;
+  margin-bottom: 20px;
+}
+
+.video-card {
+  transition: transform 0.3s ease, background-color 0.3s ease-in-out;
+  overflow: hidden;
+  text-align: center;
+  color: #1b5e20;
+  background: white;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.video-card:hover {
+  background-color: #f0f0f0;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.bg-light {
+  background-color: #f8f9fa !important;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.section {
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+/* Recognition Section */
+#recognition p {
+  text-align: center;
+  margin-bottom: 2px;
+  font-size: 1.2em;
+}
+
+#recognition button {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #388e3c; /* Зеленый цвет */
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#recognition button:hover {
+  background-color: #2e7d32;
+}
+
+/* Footer */
+footer {
+  background-color: #66bb6a;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  padding: 5px 10px;
+}
+
+a:hover {
+  color: #1b5e20;
+}
+
+.fixed-top {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #66bb6a;
+}
+
+.btn-primary,
+.btn-outline-success {
+  padding: 10px 20px;
+  background-color: #388e3c; /* Зеленый цвет */
+  border-color: #388e3c; /* Зеленый цвет */
+  color: #fff;
+}
+
+.btn-outline-success:hover {
+  background-color: #2e7d32; /* Тот же зеленый, но темнее */
+  border-color: #2e7d32;
+}
+
+#team,
+#bengali,
+#russian,
+#american,
+#recognition {
+  scroll-margin-top: 40px;
+}
+
+#teamButton:hover,
+#languageBtn:hover,
+#loginBtn:hover,
+#TranslatorButton:hover {
+  color: #1b5e20 !important;
+}
+
+/* Language Dropdown */
+.offcanvas-header {
+  background-color: #388e3c; /* Зеленый цвет для выпадающего меню */
+}
+
+.offcanvas-body {
+  background-color: #eaf8e6; /* Зеленый цвет для выпадающего меню */
+}
+
+.offcanvas-body .list-group-item:hover {
+  background-color: #eaf8e6; /* Тот же зеленый, но темнее */
+}
+
+#registerForm .modal-header h2,
+#loginForm .modal-header h2 {
+  background-color: #388e3c; /* Зеленый фон для заголовка Login и Register */
+  color: white; /* Белый цвет текста */
+  padding: 10px 20px; /* Отступы для заголовка */
+  border-radius: 5px 5px 0 0; /* Скругленные верхние углы */
+}
