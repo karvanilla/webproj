@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Vollkorn+SC&display=swap" rel="stylesheet">
+    <title>Accessible Sign Language Learning Platform</title>
+    <link rel="stylesheet" href="/Users/karvanilla/Desktop/webproj/1.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Sign Language Learning Platform</h1>
+        <nav>
+            <a href="#bengali">Bengali</a>
+            <a href="#russian">Russian</a>
+            <a href="#american">American</a>
+            <a href="#auth">Register / Login</a>
+        </nav>
+    </header>
+
+    <main class="content">
+        <!-- Bengali Section -->
+        <div id="bengali" class="section">
+            <h2>Bengali Sign Language</h2>
+            <div class="video-grid">
+                <div class="video-card">
+                    <video controls>
+                        <source src="/Users/karvanilla/Desktop/webproj/Videos/college.mp4" type="video/mp4">
+                    </video>
+                    <p>Hello👋💜</p>
+                </div>
+                <div class="video-card">
+                    <video controls>
+                        <source src="/Users/karvanilla/Desktop/webproj/Videos/office.mp4" type="video/mp4">
+                    </video>
+                    <p>Thank You🫶💜</p>
+                </div>
+                <div class="video-card">
+                    <video controls>
+                        <source src="/Users/karvanilla/Desktop/webproj/Videos/school.mp4" type="video/mp4">
+                    </video>
+                    <p>Good Morning🌞💜</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Russian Section -->
+        <div id="russian" class="section">
+            <h2>Russian Sign Language</h2>
+            <div class="video-grid">
+                <div class="video-card">
+                    <video controls>
+                        <source src="/Users/karvanilla/Desktop/webproj/Videos/university.mp4" type="video/mp4">
+                    </video>
+                    <p>Hello👋💜</p>
+                </div>
+                <div class="video-card">
+                    <video controls>
+                        <source src="/Users/karvanilla/Desktop/webproj/Videos/college.mp4" type="video/mp4">
+                    </video>
+                    <p>Thank You🫶💜</p>
+                </div>
+                <div class="video-card">
+                    <video controls>
+                        <source src="/Users/karvanilla/Desktop/webproj/Videos/school.mp4" type="video/mp4">
+                    </video>
+                    <p>Good Morning🌞💜</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Registration Section -->
+        <div id="auth" class="section">
+            <h2>Registration</h2>
+            <form id="register" class="active">
+                <input type="text" placeholder="First Name" required>
+                <input type="text" placeholder="Last Name" required>
+                <input type="email" placeholder="Email" required>
+                <input type="number" placeholder="Age" required min="1">
+                <select required>
+                    <option value="">Select Education Qualification</option>
+                    <option value="High School">High School</option>
+                    <option value="Bachelor's">Bachelor's</option>
+                    <option value="Master's">Master's</option>
+                </select>
+                <input type="password" placeholder="Password" required minlength="6">
+                <input type="password" placeholder="Repeat Password" required minlength="6">
+                <button type="submit">Register</button>
+            </form>
+
+            <!-- Login Form -->
+            <form id="login">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required minlength="6">
+                <button type="submit">Login</button>
+            </form>
+
+            <!-- Team Section -->
+            <h2>Meet Our Team</h2>
+            <div class="team-container">
+                <!-- Team Members -->
+                <!-- Add team members as needed -->
+                <!-- Example Team Member -->
+                <div class="team-member">
+                    <img src="/Users/karvanilla/Desktop/webproj/image/IMG_3460.jpg" alt="Team member">
+                    <h3>Vinnik Evgenia</h3>
+                    <p>Team member</p>
+                </div>
+                <div class="team-member">
+                    <img src="/Users/karvanilla/Desktop/webproj/image/karishka.jpg" alt="Team member">
+                    <h3>Levkina Karina</h3>
+                    <p>Team member</p>
+                </div>
+                <div class="team-member">
+                    <img src="/Users/karvanilla/Desktop/webproj/image/IMG_3462.jpg" alt="Team member">
+                    <h3>Baranova Ekaterina</h3>
+                    <p>Team member</p>
+                </div>
+                <div class="team-member">
+                    <img src="/Users/karvanilla/Desktop/webproj/image/Ami.jpg" alt="Team member">
+                    <h3>Zakuraeva Amina</h3>
+                    <p>Team member</p>
+                </div>
+
+                <!-- Additional team members can be added here -->
+            </div>
+
+            <!-- Recognition Section -->
+            <div id="recognition" class="section">
+                <h2>Sign Language Recognition</h2>
+                <p>Our platform uses AI-powered technology to recognize and interpret sign language gestures in real-time. This feature bridges the communication gap and promotes inclusivity.</p>
+                <button onclick="startRecognition()">Start Recognition</button>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+    <p>&copy; 2024 Accessible Sign Language Platform</p>
+    <div class="social-icons">
+        <a href="https://t.me/karvanilla" target="_blank">Telegram: @karvanilla</a>
+        <a href="https://t.me/yimilyoxy" target="_blank">   @yimilyoxy</a>
+        <a href="https://t.me/MileevaE" target="_blank">   @MileevaE</a>
+        <a href="https://t.me/zloyeewedro" target="_blank">   @zloyeewedro</a>
+    </div> 
+</footer>
+
+    <!-- Include JavaScript file -->
+    <script src="/Users/karvanilla/Desktop/webproj/1.js"></script>
+
+</body>
+</html>

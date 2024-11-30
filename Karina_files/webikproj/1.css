@@ -1,0 +1,109 @@
+body {
+    font-family: 'Vollkorn';
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8;
+    color: #333;
+}
+
+.header {
+    background: linear-gradient(135deg, #6e7dff, #b9d3ff);
+    padding: 20px;
+    text-align: center;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: white;
+}
+
+.content {
+    padding: 20px;
+}
+
+.section {
+    background-color: white;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.video-grid {
+    display: flex; /* Сохраняем исходное расположение видео */
+    justify-content: space-around;
+}
+
+.video-card {
+    flex-basis: 30%;
+}
+
+.video-card video {
+    width: 100%;
+}
+
+/* Изменения для формы авторизации */
+form {
+    display: flex;
+    flex-direction: column; /* Вертикальное расположение */
+}
+
+form input,
+form select,
+form button {
+    margin-bottom: 10px; /* Отступ между элементами формы */
+}
+
+/* Кнопки Login и Register */
+button {
+    background-color: #6e7dff; /* Цвет фона кнопок */
+    color: white; /* Цвет текста кнопок */
+    border: none; /* Убираем рамку */
+    padding: 10px; /* Отступы внутри кнопки */
+    cursor: pointer; /* Указатель при наведении */
+    width: 25%; /* Уменьшаем ширину кнопок в 4 раза (например, если изначально 100%) */
+    max-width: 150px; /* Максимальная ширина для кнопок (опционально) */
+}
+
+button:hover {
+    background-color: #5a6bdb; /* Цвет при наведении */
+}
+form input,
+form select {
+    width: 25%; /* Уменьшаем ширину полей ввода в 4 раза (например, если изначально 100%) */
+    max-width: 300px; /* Максимальная ширина для полей (опционально) */
+    padding: 10px; /* Отступы внутри полей */
+    border: 1px solid #ccc; /* Рамка для полей */
+    border-radius: 4px; /* Закругление углов полей */
+    
+}
+/* Кружковая форма для изображений участников */
+.team-member img {
+    width: 100px; /* Установите желаемый размер */
+    height: 100px; /* Установите желаемый размер */
+    border-radius: 50%; /* Кружковая форма */
+    object-fit: cover; /* Обрезка изображения */
+}
+
+.team-container {
+    display: flex;
+    gap: 30px; /* Увеличиваем расстояние между участниками */
+}
+
+
+.team-member {
+    text-align: center; /* Центрируем текст под изображением */
+}
+
+
+/* Sign Language Recognition Section */
+
+.team-member h3 {
+    margin-top: 5px; /* Отступ между фамилией и именем */
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+}
