@@ -67,6 +67,16 @@ h2 {
   cursor: pointer;
 }
 
+.bg-primary {
+  --bs-bg-opacity: 1;
+  background-color: #2e7d32 !important;
+}
+
+.bg-secondary {
+  --bs-bg-opacity: 1;
+  background-color: #2e7d32 !important;;
+}
+
 .bg-light {
   background-color: #f8f9fa !important;
   border-radius: 15px;
@@ -131,6 +141,13 @@ a:hover {
   z-index: 1000;
   background-color: #66bb6a;
 }
+.fixed-search {
+  position: fixed;
+  top: 40px;
+  text-align: right;
+  width: 100%;
+  z-index: 1000;
+}
 
 .btn-primary,
 .btn-outline-success {
@@ -173,10 +190,22 @@ a:hover {
   background-color: #eaf8e6; /* Тот же зеленый, но темнее */
 }
 
-#registerForm .modal-header h2,
-#loginForm .modal-header h2 {
-  background-color: #388e3c; /* Зеленый фон для заголовка Login и Register */
-  color: white; /* Белый цвет текста */
-  padding: 10px 20px; /* Отступы для заголовка */
-  border-radius: 5px 5px 0 0; /* Скругленные верхние углы */
+.search-container {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.search-container input {
+  padding: 5px;
+  font-size: 14px;
+  margin-bottom: 5px;
+  width: 200px;
+}
+
+.search-container button {
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
 }

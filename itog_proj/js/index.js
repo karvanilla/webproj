@@ -5,11 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const teamContainer = document.querySelector("#team .row");
     const teamMembers = [
       {
-        name: "Ashrafi Arifa",
-        role: "Team Leader",
-        img: "pictures/team/photo_test.png",
-      },
-      {
         name: "John Doe",
         role: "Backend Developer",
         img: "pictures/team/backend_dev.jpg",
@@ -67,4 +62,3 @@ toggleAuthBtn.addEventListener("click", () => {
   toggleForm(loginForm.style.display === "none");
 });
 });
-  
