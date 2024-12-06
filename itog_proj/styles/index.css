@@ -209,3 +209,24 @@ a:hover {
   font-size: 14px;
   cursor: pointer;
 }
+
+
+/* Fixed buttons for text size adjustment */
+#text-size-controls {
+  position: fixed;
+  top: 90%;
+  left: 10px; /* Смещение от левого края */
+  transform: translateY(-50%); /* Центровка по вертикали */
+  z-index: 1000;
+}
+
+#text-size-controls .btn {
+  font-size: 1.5rem;
+  padding: 10px 15px;
+  border-radius: 50%;
+  width: 50px; /* Фиксированный размер для аккуратности */
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
