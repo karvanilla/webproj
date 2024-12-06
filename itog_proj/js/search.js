@@ -28,7 +28,7 @@ function performSearch() {
             const element = elements[i];
             if (element.children.length === 0 && element.textContent.trim().toLowerCase().includes(query)) {
                 // Если элемент содержит текст и в нем есть совпадение с запросом
-                matches.push(element); // Добавляем элемент в массив совпадений
+                findMatchesInElement(element, query);
             }
         }
 
@@ -43,6 +43,37 @@ function performSearch() {
     }
 }
 
+function findMatchesInElement(element, query) {
+    // Создаем регулярное выражение для поиска точных совпадений (с флагом g)
+    const regex = new RegExp(query, 'gi'); // флаг 'g' для глобального поиска, 'i' для игнорирования регистра
+    // Найдем все текстовые узлы в элементе
+    const textNodes = getTextNodes(element);
+    textNodes.forEach(node => {
+        let match;
+        while ((match = regex.exec(node.textContent)) !== null) {
+            // Если нашли совпадение, добавляем его в массив matches
+            const matchObj = {
+                node,
+                matchIndex: match.index,
+                length: match[0].length,
+                element
+            };
+            matches.push(matchObj);
+        }
+    });
+}
+
+// Функция для получения всех текстовых узлов в элементе
+function getTextNodes(element) {
+    const nodes = [];
+    const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT, null, false);
+    let currentNode;
+    while (currentNode = walker.nextNode()) {
+        nodes.push(currentNode);
+    }
+    return nodes;
+}
+
 // Функция для сброса всех выделений
 function resetHighlight() {
     // Сбрасываем фоновый цвет и цвет текста для всех элементов на странице
@@ -51,6 +82,27 @@ function resetHighlight() {
         allElements[i].style.backgroundColor = '';
         allElements[i].style.color = '';
     }
+    // Убираем выделение текста
+    if (window.getSelection) {
+        window.getSelection().removeAllRanges();
+    }
+}
+
+// Функция для выделения найденного текста
+function highlightText(match) {
+    const range = document.createRange();
+    const selection = window.getSelection();
+    range.setStart(match.node, match.matchIndex);
+    range.setEnd(match.node, match.matchIndex + match.length);
+    selection.removeAllRanges();
+    selection.addRange(range);
+
+    // Выделяем только найденный текст
+    const span = document.createElement('span');
+    span.style.backgroundColor = 'yellow';
+    span.style.color = 'black';
+    span.appendChild(range.extractContents());
+    range.insertNode(span);
 }
 
 // Функция для перехода к следующему совпадению
@@ -61,11 +113,10 @@ function goToNextMatch() {
 
         // Переход к текущему совпадению
         const currentMatch = matches[currentMatchIndex];
-        currentMatch.style.backgroundColor = 'blue'; // Выделяем текущий элемент синим цветом
-        currentMatch.style.color = 'white';
+        highlightText(currentMatch); // Выделяем только текст
 
         // Прокручиваем страницу к текущему совпадению
-        currentMatch.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        currentMatch.node.parentElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
         // Обновляем индекс для следующего совпадения
         currentMatchIndex = (currentMatchIndex + 1) % matches.length; // После последнего элемента возвращаемся к первому
