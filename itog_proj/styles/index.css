@@ -74,7 +74,7 @@ h2 {
 
 .bg-secondary {
   --bs-bg-opacity: 1;
-  background-color: #2e7d32 !important;;
+  background-color: #2e7d32 !important;
 }
 
 .bg-light {
@@ -92,11 +92,15 @@ h2 {
   margin-bottom: 40px;
 }
 
-/* Recognition Section */
-#recognition p {
+ p {
   text-align: center;
   margin-bottom: 2px;
   font-size: 1.2em;
+}
+
+#about p
+{
+  padding-bottom: 50px;
 }
 
 #recognition button {
@@ -105,7 +109,7 @@ h2 {
   padding: 10px 20px;
   font-size: 16px;
   color: white;
-  background-color: #388e3c; /* Зеленый цвет */
+  background-color: #388e3c; 
   border: none;
   border-radius: 5px;
   font-weight: bold;
@@ -210,13 +214,11 @@ a:hover {
   cursor: pointer;
 }
 
-
-/* Fixed buttons for text size adjustment */
 #text-size-controls {
   position: fixed;
   top: 90%;
-  left: 10px; /* Смещение от левого края */
-  transform: translateY(-50%); /* Центровка по вертикали */
+  left: 10px;
+  transform: translateY(-50%);
   z-index: 1000;
 }
 
@@ -224,7 +226,7 @@ a:hover {
   font-size: 1.5rem;
   padding: 10px 15px;
   border-radius: 50%;
-  width: 50px; /* Фиксированный размер для аккуратности */
+  width: 50px;
   height: 50px;
   display: flex;
   justify-content: center;
