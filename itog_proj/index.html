@@ -15,36 +15,34 @@
 <body>
      <!-- Header Section -->
      <header class="d-flex flex-column align-items-center p-3">
-        <div class="d-flex justify-content-between w-100 px-3 fixed-top">
-          <!-- Navigation Buttons -->
-          <a id="aboutButton" class="btn btn-link text-dark" href="#about"
-          >About</a
-        >
-          <a id="teamButton" class="btn btn-link text-dark" href="#team"
-            >Our Team</a
-          >
-          <div>
-            <a id="TranslatorButton" class="btn btn-link text-dark" href=""
-            >Translator</a
-            >
-            <button
-            id="loginBtn"
-            class="btn btn-link text-dark"
-            data-bs-toggle="modal"
-            data-bs-target="#authModal"
-          >
-              Login
-            </button>
-            <button
-              id="languageBtn"
-              class="btn btn-link text-dark"
-              data-bs-toggle="offcanvas"
-              data-bs-target="#languageMenu"
-            >
-              Language
-            </button>
+      <div class="d-flex w-100 fixed-top justify-content-between">
+          <!-- Left Navigation Buttons -->
+          <div class="d-flex">
+              <a id="aboutButton" class="btn btn-link text-dark" href="#about">About</a>
+              <a id="teamButton" class="btn btn-link text-dark" href="#team">Our Team</a>
           </div>
-        </div>
+          
+          <!-- Right Navigation Buttons -->
+          <div class="d-flex">
+              <a id="TranslatorButton" class="btn btn-link text-dark" href="">Translator</a>
+              <button
+                  id="loginBtn"
+                  class="btn btn-link text-dark"
+                  data-bs-toggle="modal"
+                  data-bs-target="#authModal"
+              >
+                  Login
+              </button>
+              <button
+                  id="languageBtn"
+                  class="btn btn-link text-dark"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#languageMenu"
+              >
+                  Language
+              </button>
+          </div>
+      </div>
         <div class="fixed-search">
           <input type="text" id="search-input" placeholder="Enter search term" />
           <button onclick="performSearch()">Search</button>
@@ -111,9 +109,9 @@
           <a href="russian.html" class="video-link text-decoration-none">
             <div class="video-card p-3">
               <video controls class="w-100">
-                <source src="video/russian/hello.mp4" type="video/mp4" />
+              	<source src="video/russian/fry.webm" type="video/mp4" />
               </video>
-              <p class="text-center mt-2">Hello</p>
+              <p class="text-center mt-2">Жарить (to fry)</p>
             </div>
           </a>
         </div>
