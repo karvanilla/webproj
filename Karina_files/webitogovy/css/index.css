@@ -1,0 +1,154 @@
+body {
+  margin: 0;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  background-color: #eaf8e6;
+  padding-top: 35px;
+}
+#canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+header {
+  background: #2e7d32 !important;
+  padding: 20px;
+  text-align: center;
+}
+header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white !important;
+}
+/* Buttons and Links */
+.btn-link,
+.btn-outline-secondary,
+.btn-outline-primary,
+.btn-primary,
+.btn-outline-success {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 20px;
+}
+.btn-primary,
+.btn-outline-success {
+  padding: 10px 20px;
+  background-color: #388e3c; 
+}
+.btn-outline-success:hover {
+  background-color: #2e7d32; 
+}
+a {
+  color: white;
+}
+a:hover {
+  color: #1b5e20;
+}
+h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 20px auto; /* Объединено margin-top и margin-bottom */
+}
+#about h2,
+#recognition h2 {
+    color: #388e3c !important; /* Зеленый цвет текста */
+}
+.video-card {
+  transition: transform .3s ease, background-color .3s ease-in-out;
+  overflow: hidden;
+  text-align: center;
+  color: #1b5e20;
+  background: white;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: rgba(0,0,0,.2) 0px 2px 5px; /* Упрощено */
+}
+.video-card:hover {
+  background-color: #f0f0f0;
+  transform: scale(1.05);
+}
+.section,
+.bg-light {
+    padding: 20px;
+    background-color: white; /* Объединено с .section */
+    border-radius: 8px;
+    box-shadow: rgba(0,0,0,.2) 0px 2px 5px; /* Упрощено */
+    margin-top:40px; /* Объединено с margin-bottom */
+}
+p {
+    text-align:center; 
+    margin-bottom:2px; 
+    font-size:1.2em; 
+}
+#about p {
+    padding-bottom:50px; 
+}
+#recognition button {
+    display:block; 
+    margin:auto; 
+    padding:10px; 
+    font-size:16px; 
+    color:white; 
+    background-color:#388e3c; 
+    border:none; 
+    border-radius:5px; 
+    font-weight:bold; 
+    cursor:pointer; 
+}
+#recognition button:hover {
+    background-color:#2e7d32; 
+}
+footer {
+    background-color:#66bb6a; 
+    color:white; 
+    text-align:center; 
+    padding:15px; 
+}
+/* Fixed Elements */
+.fixed-top,
+.fixed-search {
+    position: fixed; 
+    top:0; 
+    width:100%; 
+    z-index:1000; 
+}
+.fixed-search { top:40px; text-align:right; }
+/* Scroll Margin */
+#team, #bengali, #russian, #american, #about, #recognition {
+    scroll-margin-top:40px; 
+}
+/* Language Dropdown */
+.offcanvas-header { background-color:#388e3c; }
+.offcanvas-body { background-color:#eaf8e6; }
+.offcanvas-body .list-group-item:hover { background-color:#eaf8e6; }
+/* Search Container */
+.search-container {
+    margin-top:10px; 
+    display:flex; 
+    flex-direction:column; 
+}
+.offcanvas-header {
+  background-color: #388e3c !important; /* Зеленый цвет фона заголовка */
+  color: white; /* Цвет текста заголовка */
+}
+/* Modal Header Style for Login and Register */
+.modal-header {
+  background-color: #388e3c !important; /* Зеленый цвет фона заголовка */
+  color: white; /* Цвет текста заголовка */
+}
+.search-container input,
+.search-container button {
+    padding:.5em; /* Объединено для input и button */
+}
+.search-container input { font-size:14px; margin-bottom:.5em; width:auto;} /* Упрощено */
+#text-size-controls {
+    position:fixed; top:auto !important; left:auto !important; /* Убраны лишние стили */
+}
+#text-size-controls .btn {
+    font-size:1.5rem; padding:.5em; border-radius:50%; width:50px;height:auto !important;text-align:center;margin:auto !important;} /* Упрощено */
+.card { display:flex ; flex-direction : column ; align-items : center ; justify-content : center ; height : auto ; text-align : center ; }
+.card img { display:block ; margin : auto ; width :100px ; height :100px ; object-fit : cover ; border-radius :50% ; margin-bottom :10px ; }
