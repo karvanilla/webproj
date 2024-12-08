@@ -6,19 +6,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const teamMembers = [
       {
         name: "Баранова Екатерина",
-        img: "/Users/karvanilla/Desktop/webitogovy/images/kate.jpg",
+        img: "Karina_files/webitogovy/images/kate.jpg",
       },
       {
         name: "Винник Евгения",
-        img: "/Users/karvanilla/Desktop/webitogovy/images/jenny.jpg",
+        img: "Karina_files/webitogovy/images/jenny.jpg",
       },
       {
         name: "Закураева Амина",
-        img: "/Users/karvanilla/Desktop/webitogovy/images/amina.jpg",
+        img: "Karina_files/webitogovy/images/amina.jpg",
       },
       {
         name: "Лёвкина Карина",
-        img: "/Users/karvanilla/Desktop/webitogovy/images/karina.jpg",
+        img: "Karina_files/webitogovy/images/karina.jpg",
       },
     ];
   
