@@ -175,6 +175,7 @@ footer {
 }
 .offcanvas-body .list-group-item:hover {
   background-color: #eaf8e6;
+  color: #388e3c!important;
 }
 /* Search Container */
 .search-container {
