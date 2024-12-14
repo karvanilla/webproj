@@ -8,6 +8,7 @@ const shapes = Array.from({ length: 50 }, () => ({
     y: Math.random() * canvas.height,
     size: Math.random() * 20 + 5,
     color: `hsl(${Math.random() * 40 + 100}, ${Math.random() * 50 + 50}%, ${Math.random() * 30 + 60}%)`,
+    //     color: `hsl(${Math.random() * 60 + 180}, ${Math.random() * 50 + 50}%, ${Math.random() * 50 + 50}%)`, синий цвет
     dx: Math.random() * 2 - 1,
     dy: Math.random() * 2 - 1,
 }));
